@@ -13,6 +13,9 @@ public class MainPage extends AbstractPage {
 	
 	@FindBy(xpath = "//a[contains(@aria-label, 'Преподователи')]")
 	private WebElement buttonTeachers;
+	
+	@FindBy(xpath = "//a[contains(@aria-label, 'Контакты')]")
+	private WebElement buttonAddress;
 
 	@FindBy(xpath = "/html/body/div[2]/a")
 	private WebElement buttonChangeLang;
@@ -44,5 +47,9 @@ public class MainPage extends AbstractPage {
 	
 	public String getChangedHeader() {
 		return header.getText();
+	}
+	
+	public void clickOnContact() {
+		buttonAddress.click();
 	}
 }

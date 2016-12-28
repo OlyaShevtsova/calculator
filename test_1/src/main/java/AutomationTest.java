@@ -27,4 +27,8 @@ public class AutomationTest {
 	public void oneCanSeeTeacherInfo() {
 		Assert.assertEquals(LAVROVA_INFO_URL, steps.teacherInfo());
 	}
+	
+	public void oneCanSeeAddress() {
+		Assert.assertTrue(steps.isHaveAddress());
+	}
 }

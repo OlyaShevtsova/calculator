@@ -1,18 +1,16 @@
 package test.shevtsova.tat.steps;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 import test.shevtsova.tat.driver.DriverSingleton;
 import test.shevtsova.tat.pages.AboutSpecialityPage;
+import test.shevtsova.tat.pages.ContactPage;
 import test.shevtsova.tat.pages.LavrovaPage;
 import test.shevtsova.tat.pages.MainPage;
 import test.shevtsova.tat.pages.TeachersPage;
 
 public class Steps {
 	private WebDriver driver;
-	private final Logger LOGGER = LogManager.getRootLogger();
 	
 	public void initBrowser() {
 		driver = DriverSingleton.getDriver();
@@ -43,5 +41,12 @@ public class Steps {
 		teachersPage.clickLavrovaButton();
 		LavrovaPage lavrovaPage = new LavrovaPage(driver);
 		return lavrovaPage.getCurrentOpenedUserPage();
+	}
+	
+	public boolean isHaveAddress() {
+		MainPage mainPage = new MainPage(driver);
+		mainPage.clickOnContact();
+		ContactPage contactPage = new ContactPage(driver);
+		return contactPage.isContainAddress();
 	}
 }
