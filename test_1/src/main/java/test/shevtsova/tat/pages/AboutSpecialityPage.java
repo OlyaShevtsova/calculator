@@ -16,8 +16,7 @@ public class AboutSpecialityPage extends AbstractPage {
         PageFactory.initElements(this.driver, this);
 	}
 	
-	public String getCurrentOpenedUserPage()
-    {
+	public String getCurrentOpenedUserPage() {
         return openedUserPage.getText();
     }
 
