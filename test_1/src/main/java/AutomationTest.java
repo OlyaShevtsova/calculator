@@ -1,3 +1,4 @@
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.testng.annotations.BeforeMethod;
 
@@ -7,6 +8,7 @@ public class AutomationTest {
 	private static final String ABOUT_SPECIALITY_URL = "http://km.mmf.bsu.by/about.html";
 	private static final String DETCH_HEADER = "Computermathematik und Systemanalyse";
 	private static final String LAVROVA_INFO_URL = "http://km.mmf.bsu.by/people/lavrova.html";
+	private static final String EVENT_PAGE_URL = "http://km.mmf.bsu.by/events.html";
 	
 	private Steps steps;
 	
@@ -30,5 +32,9 @@ public class AutomationTest {
 	
 	public void oneCanSeeAddress() {
 		Assert.assertTrue(steps.isHaveAddress());
+	}
+	
+	public void oneCanLearnMoreAboutEvent() {
+		Assert.assertFalse(StringUtils.equals(EVENT_PAGE_URL, steps.hrefMoreAboutEvent()));
 	}
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import test.shevtsova.tat.driver.DriverSingleton;
 import test.shevtsova.tat.pages.AboutSpecialityPage;
 import test.shevtsova.tat.pages.ContactPage;
+import test.shevtsova.tat.pages.EventPage;
 import test.shevtsova.tat.pages.LavrovaPage;
 import test.shevtsova.tat.pages.MainPage;
 import test.shevtsova.tat.pages.TeachersPage;
@@ -48,5 +49,12 @@ public class Steps {
 		mainPage.clickOnContact();
 		ContactPage contactPage = new ContactPage(driver);
 		return contactPage.isContainAddress();
+	}
+	
+	public String hrefMoreAboutEvent() {
+		MainPage mainPage = new MainPage(driver);
+		mainPage.clickOnEvent();
+		EventPage eventPage = new EventPage(driver);
+		return eventPage.getHrefFromLearnMoreButton();
 	}
 }
